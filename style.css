@@ -1,0 +1,42 @@
+body {
+background: linear-gradient(132deg, #000000, #5d2253, #380936, #716a7a, #cccccc, #ffffff);
+background-size: 400% 400%;
+animation: BackgroundGradient 8s ease infinite;
+
+}
+
+@keyframes BackgroundGradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+h1{
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  font-family: 'Lobster Two', cursive;
+  font-style: italic;
+  z-index: 9;
+  font-size: 100px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+}
+h2{
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  font-family: 'Lobster Two', cursive;
+  font-style: italic;
+  z-index: 9;
+  font-size: 100px;
+  color: white;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+}
