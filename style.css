@@ -1,42 +1,129 @@
-body {
-background: linear-gradient(132deg, #000000, #5d2253, #380936, #716a7a, #cccccc, #ffffff);
-background-size: 400% 400%;
-animation: BackgroundGradient 8s ease infinite;
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-}
+    body {
+      font-family: Arial, sans-serif;
+    }
 
-@keyframes BackgroundGradient {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-h1{
-  margin: 0;
-  padding: 0;
-  pointer-events: none;
-  white-space: nowrap;
-  font-family: 'Lobster Two', cursive;
-  font-style: italic;
-  z-index: 9;
-  font-size: 100px;
-  color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%,-50%,0);
-}
-h2{
-  margin: 0;
-  padding: 0;
-  pointer-events: none;
-  white-space: nowrap;
-  font-family: 'Lobster Two', cursive;
-  font-style: italic;
-  z-index: 9;
-  font-size: 100px;
-  color: white;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate3d(-50%,-50%,0);
-}
+    /* 🟣 Contenedor con fondo animado y títulos */
+    .container-hero {
+      height: 60vh;
+      background: linear-gradient(132deg, #000000, #5d2253, #380936, #716a7a, #cccccc, #ffffff);
+      background-size: 400% 400%;
+      animation: BackgroundGradient 8s ease infinite;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    @keyframes BackgroundGradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      font-family: 'Lobster Two', cursive;
+      font-style: italic;
+      font-size: 100px;
+    }
+
+    h2 {
+      font-family: 'Lobster Two', cursive;
+      font-style: italic;
+      font-size: 40px;
+    }
+
+    .hover-underline {
+      position: relative;
+      display: inline-block;
+    }
+
+    .hover-underline::after,
+    .hover-underline::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, #ff0000, #00ffff);
+      left: 0;
+      transform: scaleX(0);
+      transition: transform 0.4s ease-out;
+    }
+
+    .hover-underline::before {
+      top: -8px;
+      transform-origin: left;
+    }
+
+    .hover-underline::after {
+      bottom: -8px;
+      transform-origin: right;
+    }
+
+    .hover-underline:hover::before,
+    .hover-underline:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* 🔵 Contenedor negro con tarjetas */
+    .container-card {
+      background: #000;
+      height: 40vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      width: 200px;
+      height: 250px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .card-front {
+      background: white;
+      border: 1px solid #e5e7eb;
+    }
+
+    .card-back {
+      background: #8b5cf6;
+      color: white;
+      transform: rotateY(180deg);
+    }
