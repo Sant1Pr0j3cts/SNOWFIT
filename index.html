@@ -1,42 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <title>Logo Central</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>SNOWFIT</title>
+
+  <!-- Fuentes sugeridas -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Si tienes referencia.txt, conviértelo en referencia.css y activa esta línea:
+  <link rel="stylesheet" href="referencia.css" /> -->
 </head>
-<body>
+<body class="gradient-dark text-soft-gray">
+  <header class="container-hero">
+    <h1 class="brand-title">SNOWFIT</h1>
+    <h2 class="brand-subtitle"><span class="hover-underline">No limits. No fear.</span></h2>
+    <nav class="nav">
+      <a href="#productos" class="btn btn-primary neon-border">Productos</a>
+      <a href="#contacto" class="btn btn-outline">Contacto</a>
+    </nav>
+  </header>
 
-  <!-- 🟣 Contenedor 1: Fondo + Títulos -->
-  <div class="container-hero">
-    <h1>SNOWFIT</h1>
-    <h2><span class="hover-underline">No limits. No fear.</span></h2>
+  <main>
+    <!-- Hero visual -->
+    <section class="hero-visual">
+  <div class="hero-actions glass-card futuristic-card">
+    <a href="/" class="btn btn-primary pulse-glow">Inicio</a>
+    <a href="/productos" class="btn btn-outline">Productos</a>
+    <a href="/contacto" class="btn btn-outline">Contacto</a>
+    <a href="/carrito" class="btn btn-outline">Carrito</a>
   </div>
+</section>
 
-  <!-- 🔵 Contenedor 2: Tarjetas -->
-  <div class="container-card">
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">Front 1</div>
-        <div class="card-back">Back 1</div>
+
+    <!-- Productos -->
+    <section id="productos" class="container-card">
+      <!-- Tarjeta 1 -->
+      <article class="item futuristic-card">
+        <div class="card-media flip glass-card neon-border">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="https://picsum.photos/400/400?random=1" alt="Producto 1" loading="lazy" />
+            </div>
+            <div class="flip-back">
+              <ul class="features">
+                <li>Tejido térmico</li>
+                <li>Secado rápido</li>
+                <li>Costuras planas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card-info">
+          <h3 class="text-warm-beige">Camiseta Snowfit Pro</h3>
+          <p class="price text-custom-beige">$129.900</p>
+          <button class="btn btn-primary add-to-cart" data-id="p1">Agregar</button>
+        </div>
+      </article>
+
+      <!-- Tarjeta 2 -->
+      <article class="item futuristic-card">
+        <div class="card-media flip glass-card neon-border">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="https://picsum.photos/400/400?random=2" alt="Producto 2" loading="lazy" />
+            </div>
+            <div class="flip-back">
+              <ul class="features">
+                <li>Compresión media</li>
+                <li>UV 50+</li>
+                <li>Antimicrobiano</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card-info">
+          <h3 class="text-warm-beige">Leggins Active</h3>
+          <p class="price text-custom-beige">$159.900</p>
+          <button class="btn btn-primary add-to-cart" data-id="p2">Agregar</button>
+        </div>
+      </article>
+
+      <!-- Tarjeta 3 -->
+      <article class="item futuristic-card">
+        <div class="card-media flip glass-card neon-border">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="https://picsum.photos/400/400?random=3" alt="Producto 3" loading="lazy" />
+            </div>
+            <div class="flip-back">
+              <ul class="features">
+                <li>Impermeable</li>
+                <li>Respirable</li>
+                <li>Reflectivo</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card-info">
+          <h3 class="text-warm-beige">Cortaviento Urban</h3>
+          <p class="price text-custom-beige">$199.900</p>
+          <button class="btn btn-primary add-to-cart" data-id="p3">Agregar</button>
+        </div>
+      </article>
+    </section>
+
+    <!-- Carrito mínimo -->
+    <section class="cart glass-card" aria-live="polite">
+      <h3>Carrito</h3>
+      <ul id="cartList" class="cart-list"></ul>
+      <div class="cart-footer">
+        <span>Total:</span>
+        <strong id="cartTotal">$0</strong>
+        <button id="checkout" class="btn btn-outline">Pagar</button>
       </div>
-    </div>
+    </section>
 
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">Front 2</div>
-        <div class="card-back">Back 2</div>
-      </div>
-    </div>
+    <!-- Contacto -->
+    <section id="contacto" class="contact glass-card">
+      <h3>Contacto</h3>
+      <form id="contactForm" class="form">
+        <label class="form-field">
+          <span>Nombre</span>
+          <input type="text" name="nombre" required />
+        </label>
+        <label class="form-field">
+          <span>Email</span>
+          <input type="email" name="email" required />
+        </label>
+        <label class="form-field">
+          <span>Mensaje</span>
+          <textarea name="mensaje" rows="4" required></textarea>
+        </label>
+        <button class="btn btn-primary">Enviar</button>
+        <p id="formMsg" class="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
 
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">Front 3</div>
-        <div class="card-back">Back 3</div>
-      </div>
-    </div>
-  </div>
+  <footer class="site-footer">
+    <small>© <span id="year"></span> SNOWFIT — Todos los derechos reservados</small>
+  </footer>
 
+  <script src="app.js" defer></script>
 </body>
 </html>
