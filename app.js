@@ -85,3 +85,18 @@ function initEvents(){
 }
 
 document.addEventListener('DOMContentLoaded', initEvents);
+
+
+  const header = document.getElementById('main-header');
+  const hero = document.getElementById('hero');
+
+  window.addEventListener('scroll', () => {
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    if (heroBottom <= 0) {
+      header.classList.add('sticky');
+    } else {
+      header.classList.remove('sticky');
+    }
+  });
+
+
