@@ -166,3 +166,85 @@ h2 .hover-underline:hover::after {
     0 0 6px rgba(255,255,255,.35);
   margin: 0 0 8px;
 }
+/* === Header Sticky Gucci Adaptado === */
+.sticky-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+  z-index: 1000;
+  color: black;
+}
+.sticky-header.sticky {
+  transform: translateY(0);
+}
+.logo-small {
+  font-size: 28px;
+  letter-spacing: 4px;
+  font-family: 'Lobster Two', cursive;
+}
+
+/* === Hero Estilo Gucci Adaptado === */
+.hero-gucci {
+  height: 100vh;
+  background: linear-gradient(132deg, #000000, #5d2253, #380936, #716a7a, #cccccc, #ffffff);
+  background-size: 400% 400%;
+  animation: BackgroundGradient 8s ease infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-gucci h1,
+.hero-gucci h2 {
+  font-family: 'Lobster Two', cursive;
+  font-style: italic;
+  color: #fff;
+  text-shadow: 0 0 32px rgba(212,175,55,.25), 0 0 6px rgba(255,255,255,.35);
+}
+.hero-gucci h1 {
+  font-size: clamp(48px, 10vw, 140px);
+  margin-bottom: 10px;
+}
+.hero-gucci h2 {
+  font-size: 40px;
+}
+
+/* === Hover Underline Adaptado === */
+.hover-underline {
+  position: relative;
+  display: inline-block;
+}
+.hover-underline::after,
+.hover-underline::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #ff0000, #00ffff);
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.4s ease-out;
+}
+.hover-underline::before {
+  top: -8px;
+  transform-origin: left;
+}
+.hover-underline::after {
+  bottom: -8px;
+  transform-origin: right;
+}
+.hover-underline:hover::before,
+.hover-underline:hover::after {
+  transform: scaleX(1);
+}
