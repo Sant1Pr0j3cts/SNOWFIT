@@ -248,3 +248,22 @@ h2 .hover-underline:hover::after {
 .hover-underline:hover::after {
   transform: scaleX(1);
 }
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  z-index: 2000;
+  transition: transform 0.3s ease;
+}
+.whatsapp-button img {
+  width: 50px;
+  height: 50px;
+}
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
